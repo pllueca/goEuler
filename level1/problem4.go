@@ -6,7 +6,7 @@ import (
 	"github.com/brinon/goEuler/common"
 )
 
-func main() {
+func problem4() {
 	max := -1
 	for i := 999; i > 99; i-- {
 		for j := 999; j > 99; j-- {
@@ -15,5 +15,6 @@ func main() {
 			}
 		}
 	}
+	fmt.Println("problem 4")
 	fmt.Println(max)
 }
