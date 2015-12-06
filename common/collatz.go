@@ -33,3 +33,4 @@ func DynamicCollatzSteps(n int, lookup map[int]int) int {
 	lookup[n] = v
 	return v
 }
+

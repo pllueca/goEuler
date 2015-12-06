@@ -19,7 +19,7 @@ func backtrack(coins [8]int, act [8]int, index int, goal int) {
 	// se incrementa act[index] o index
 
 	if sum(coins, act) == goal {
-		fmt.Println(act)
+		//fmt.Println(act)
 		c += 1
 		return
 	}

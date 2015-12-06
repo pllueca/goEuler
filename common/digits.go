@@ -1,10 +1,32 @@
 package common
 
-import "strconv"
+import (
+	"strconv"
+	"math/big"
+)
 
 func NumDigits(n int) int {
 	s := strconv.Itoa(n)
 	return len(s)
+}
+
+func SumDigits(n int) int {
+	s := 0
+	for ; n > 0; {
+		s += n % 10
+		n = n / 10
+	}
+	return s
+}
+
+func BigSumDigits(n *big.Int) int {
+	var r int
+	r = 0
+	bigstr := n.String()
+	for i:= 0; i < len(bigstr); i++ {
+		r += int(bigstr[i])
+	}
+	return r
 }
 
 func IsPalindrome(n int) bool {
@@ -18,3 +40,5 @@ func IsPalindrome(n int) bool {
 	}
 	return true
 }
+
+

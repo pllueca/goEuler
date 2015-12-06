@@ -26,6 +26,14 @@ func ListPrimes(size int) []bool {
 	return list
 }
 
+func FirstPrimes(n int) int {
+
+	if n >= 0 && n <= 39 {
+		return n*n + n + 41
+	}
+	return -1
+}
+
 /* PrimeFactors: return the list of prime factors of n*/
 func PrimeFactors(n int) []int {
 	factors := make([]int, 0)
