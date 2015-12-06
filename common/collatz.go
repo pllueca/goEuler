@@ -4,13 +4,12 @@ package common
 // Slow version
 func CollatzSteps(n int) int {
 	var s int
-	for s=0; n != 1;{
-		if s%2 == 0 {
-			n /= 2
+	for s = 0; n != 1; s++ {
+		if n % 2 == 0 {
+			n = n / 2
 		} else {
-			n = 3 * n + 1
+			n = (3 * n) + 1
 		}
-		s += 1
 	}
 	return s
 }
@@ -25,12 +24,12 @@ func DynamicCollatzSteps(n int, lookup map[int]int) int {
 	}
 
 	var v int
-	if s%2 != 0 {
-		v = 1 + DynamicCollatzSteps((3*n + 1), lookup)
+	if n%2 != 0 {
+		v = 1 + DynamicCollatzSteps(3*n + 1, lookup)
 	} else {
 		v = 1 + DynamicCollatzSteps(n/2, lookup)
 	}
-	
+
 	lookup[n] = v
 	return v
 }
