@@ -33,7 +33,7 @@ func problem12() {
 	t := 1
 	for i := 1; ; i++ {
 		if NumDivisors(t) > 500 {
-			fmt.Println(t)
+			fmt.Println("Problem 14:", t)
 			break
 		}
 		t += i

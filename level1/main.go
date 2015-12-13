@@ -5,5 +5,7 @@ func main() {
 	problem2()
 	problem3()
 	problem4()
+	problem12()
+	problem14()
 
 }

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func problem1() {
+func Problem1() {
 	s := 0
 	for i := 1; i < 1000; i++ {
 		if i%3 == 0 {
