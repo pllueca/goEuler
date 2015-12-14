@@ -1,4 +1,4 @@
-package main
+package level1
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/brinon/goEuler/common"
 )
 
-func problem2() {
+func Problem2() {
 	fib := common.GenFib(1, 2)
 	sum := 0
 	var f int

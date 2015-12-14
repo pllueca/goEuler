@@ -1,4 +1,4 @@
-package main
+package level1
 
 import (
 	"fmt"
@@ -10,26 +10,26 @@ func NumDivisors(n int) int {
 	l := common.PrimeFactors(n)
 	//fmt.Println(n,l)
 	freq_divisors := make([]int, len(l))
+	if len(l) > 0 {
+		act := l[0]
+		idx := 0
+		freq_divisors[0] = 1
 
-	act := l[0]
-	idx := 0
-	freq_divisors[0] = 1
-
-	for i := 1; i < len(l); i++ {
-		if l[i] != act {
-			act = l[i]
-			idx++
-			freq_divisors[idx] = 1
-		} else {
-			freq_divisors[idx]++
+		for i := 1; i < len(l); i++ {
+			if l[i] != act {
+				act = l[i]
+				idx++
+				freq_divisors[idx] = 1
+			} else {
+				freq_divisors[idx]++
+			}
 		}
-	}
-	//fmt.Println(freq_divisors)
-	p := 1
+		//fmt.Println(freq_divisors)
+		p := 1
 	return p
 }
 
-func problem12() {
+func Problem12() {
 	t := 1
 	for i := 1; ; i++ {
 		if NumDivisors(t) > 500 {

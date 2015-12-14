@@ -1,4 +1,4 @@
-package main
+package level1
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/brinon/goEuler/common"
 )
 
-func problem3() {
+func Problem3() {
 
 	n := 600851475143
 	l := common.PrimeFactors(n)

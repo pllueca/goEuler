@@ -1,4 +1,4 @@
-package main
+package level1
 
 import "fmt"
 
@@ -49,11 +49,12 @@ func (t *Tree) printLeaves() {
 
 func binTree(depth int) *Tree {
 	i := 0
-	t := Tree{v: i, nil, nil}
+	t := &Tree{i, nil, nil}
+	return t
 
 }
 
-func main() {
+func test_tree() {
 	t := Tree{1, nil, nil}
 	t.addChild(2, true)
 	t.addChild(3, false)

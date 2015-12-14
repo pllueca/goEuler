@@ -1,4 +1,4 @@
-package main
+package level1
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/brinon/goEuler/common"
 )
 
-func problem14() {
+func Problem14() {
 	max := 0
 	maxi := -1
 	var v int

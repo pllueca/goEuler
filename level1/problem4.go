@@ -1,4 +1,4 @@
-package main
+package level1
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/brinon/goEuler/common"
 )
 
-func problem4() {
+func Problem4() {
 	max := -1
 	for i := 999; i > 99; i-- {
 		for j := 999; j > 99; j-- {
