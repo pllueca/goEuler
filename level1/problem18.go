@@ -1,63 +1,51 @@
-package level1
+package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"strconv"
+	"strings"
+)
 
-type Tree struct {
-	v      int
-	fl, fr *Tree
-}
+func max_sum_bottom_top(t [][]int) int {
 
-func (t *Tree) addChild(v int, d bool) {
-	child := Tree{v, nil, nil}
-	// left child
-	if d {
-		t.fl = &child
-	} else {
-		t.fr = &child
+
+	var level, max_sum_below int
+	var max_sums [][]int
+	depth := len(t)
+	max_sums := append(max_sums, t[len(t)-1)])
+	for level = len(t) - 2; t > 0; t++ {
+		max_sums_act := make(int, len(t[level]))
+		for i := 0; i < len(t[level]); i++ {
+			max_sums_act[i] = max(max_s[][i], max_s[][i])
+		}
 	}
 }
 
-func (t *Tree) innerPrint() {
-	if t.fl != nil {
-		t.fl.innerPrint()
+func problem18() {
+	dat, _ := ioutil.ReadFile("input18.txt")
+	text := string(dat)
+	//fmt.Println(text)
+	linies := strings.Split(text, "\n")
+	//fmt.Println(len(linies))
+	var t [][]int
+	for _, linia := range linies {
+		if len(linia) < 1 {
+			continue
+		}
+		nums := strings.Split(linia, " ")
+		s_nums := make([]int, 0)
+		for _, num := range nums {
+			num_val, _ := strconv.Atoi(num)
+			s_nums = append(s_nums, num_val)
+		}
+		t = append(t, s_nums)
 	}
-	fmt.Print(t.v, " ")
-	if t.fr != nil {
-		t.fr.innerPrint()
-	}
-}
 
-func (t *Tree) Print() {
-	t.innerPrint()
-	fmt.Print("\n")
-}
-
-func (t *Tree) printLeaves() {
-	b := 0
-	if t.fl != nil {
-		t.fl.printLeaves()
-		b++
-	}
-	if t.fr != nil {
-		t.fr.printLeaves()
-		b++
-	}
-	if b == 0 {
-		fmt.Println(t.v)
-	}
-}
-
-func binTree(depth int) *Tree {
-	i := 0
-	t := &Tree{i, nil, nil}
-	return t
+	fmt.Println(max_sum_bottom_top(t))
 
 }
 
-func test_tree() {
-	t := Tree{1, nil, nil}
-	t.addChild(2, true)
-	t.addChild(3, false)
-	t.Print()
-	t.printLeaves()
+func main() {
+	problem18()
 }
